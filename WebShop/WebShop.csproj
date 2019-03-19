@@ -48,27 +48,37 @@
   <ItemGroup>
     <Compile Include="Data\DatabaseConnection.cs" />
     <Compile Include="Data\ICartContext.cs" />
-    <Compile Include="Data\ICustomerContext.cs" />
+    <Compile Include="Data\IAccountContext.cs" />
     <Compile Include="Data\IOrderContext.cs" />
     <Compile Include="Data\IProductContext.cs" />
     <Compile Include="Data\MSSQLContextCart.cs" />
-    <Compile Include="Data\MSSQLContextCustomer.cs" />
+    <Compile Include="Data\MSSQLContextAccount.cs" />
     <Compile Include="Data\MSSQLContextOrder.cs" />
-    <Compile Include="Data\MSSQLContextProductcs.cs" />
-    <Compile Include="Logic\BranchRepository.cs" />
-    <Compile Include="Logic\BrandRepository.cs" />
-    <Compile Include="Logic\CartRepository.cs" />
-    <Compile Include="Logic\CategoryRepository.cs" />
-    <Compile Include="Logic\CustomerRepository.cs" />
-    <Compile Include="Logic\OrderRepository.cs" />
-    <Compile Include="Logic\ProductRepository.cs" />
+    <Compile Include="Data\MSSQLContextProduct.cs" />
+    <Compile Include="Data\BranchRepository.cs" />
+    <Compile Include="Data\BrandRepository.cs" />
+    <Compile Include="Data\CartRepository.cs" />
+    <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\AccountRepository.cs" />
+    <Compile Include="Data\OrderRepository.cs" />
+    <Compile Include="Data\ProductRepository.cs" />
+    <Compile Include="Logic\AccountController.cs" />
+    <Compile Include="Logic\CartController.cs" />
+    <Compile Include="Logic\ProductController.cs" />
+    <Compile Include="Logic\RegisterController.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="UI\Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CustomerDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +99,12 @@
     <Compile Include="UI\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\CustomerDashBoard.resx">
       <DependentUpon>CustomerDashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

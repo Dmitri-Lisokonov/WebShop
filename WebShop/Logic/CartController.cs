@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShop.Data
+namespace WebShop.Logic
 {
-    class MSSQLContextProductcs
+    class CartController
     {
     }
 }

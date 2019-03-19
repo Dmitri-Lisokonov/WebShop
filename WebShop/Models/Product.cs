@@ -12,12 +12,18 @@ namespace WebShop.Models
         public string productName;
         public string discription;
         public int serialNumber;
-        public int sizing;
+        public string sizing;
         public string colorway;
         public string categoryName;
         public string brandName;
+        public int price;
 
-        public Product(int productId, string productName, string discription, int serialNumber, int sizing, string colorway, string categoryName, string brandName)
+        public Product()
+        {
+
+        }
+
+        public Product(int productId, string productName, string discription, int serialNumber, string sizing, string colorway, string categoryName, string brandName, int price)
         {
             this.productId = productId;
             this.productName = productName;
@@ -27,6 +33,7 @@ namespace WebShop.Models
             this.colorway = colorway;
             this.categoryName = categoryName;
             this.brandName = brandName;
+            this.price = price;
         }
 
         public override string ToString()

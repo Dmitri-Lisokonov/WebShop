@@ -8,16 +8,16 @@ using WebShop.Models;
 
 namespace WebShop.Data
 {
-    class MSSQLcontextCustomer : ICustomerContext
+    class MSSQLcontextAccount : IAccountContext
     {
-        public MSSQLcontextCustomer()
+        public MSSQLcontextAccount()
         {
             
         }
-        public Customer Login(string username)
+        public Account searchByUserName(string username)
         {
 
-            Customer result = new Customer();
+            Account result = new Account();
 
             using (SqlConnection connection = DatabaseConnection.OpenConnection())
             {
@@ -30,16 +30,16 @@ namespace WebShop.Data
                     {
                         reader.Read();
 
-                        result = new Customer(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString());
+                        result = new Account(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString());
                     }
                 }
             }
                 return result;
         }
 
-        public List<Customer> GetAll()
+        public List<Account> GetAll()
         {
-            List<Customer> result = new List<Customer>();
+            List<Account> result = new List<Account>();
             using (SqlConnection connection = DatabaseConnection.OpenConnection())
             {
                 string query = "SELECT * FROM Customer ORDER BY username";
@@ -49,7 +49,7 @@ namespace WebShop.Data
                     {
                         while (reader.Read())
                         {
-                            result.Add(new Customer(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString()));
+                            result.Add(new Account(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString()));
                         }
                     }
                 }
@@ -57,9 +57,9 @@ namespace WebShop.Data
             return result;
         }
 
-        public Customer Get(int CustomerID)
+        public Account GetCustomer(int CustomerID)
         {
-            Customer result = new Customer();
+            Account result = new Account();
 
             using (SqlConnection connection = DatabaseConnection.OpenConnection())
             {
@@ -72,14 +72,14 @@ namespace WebShop.Data
                     {
                         reader.Read();
 
-                       result = new Customer(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString());
+                       result = new Account(Convert.ToInt32(reader["CustomerID"]), reader["Username"].ToString(), reader["Password"].ToString(), Convert.ToInt32(reader["CstreetNumber"]), reader["Cstreet"].ToString(), reader["CCity"].ToString(), reader["CPostalCode"].ToString(), reader["CCountry"].ToString(), reader["PaymentMethod"].ToString());
                     }
                 }
             }
             return result;
         }
 
-        public bool Insert(Customer customer)
+        public bool Insert(Account account)
         {
             bool result = false;
 
@@ -89,14 +89,14 @@ namespace WebShop.Data
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     
-                    command.Parameters.AddWithValue("@Username", customer.username );
-                    command.Parameters.AddWithValue("@Password", customer.password);
-                    command.Parameters.AddWithValue("@CstreetNumber", customer.streetNumber);
-                    command.Parameters.AddWithValue("@Cstreet", customer.streetName);
-                    command.Parameters.AddWithValue("@CCity", customer.city);
-                    command.Parameters.AddWithValue("@CPostalCode", customer.postalCode);
-                    command.Parameters.AddWithValue("@CCountry", customer.country);
-                    command.Parameters.AddWithValue("@PaymentMethod", customer.paymentMethod);            
+                    command.Parameters.AddWithValue("@Username", account.username );
+                    command.Parameters.AddWithValue("@Password", account.password);
+                    command.Parameters.AddWithValue("@CstreetNumber", account.streetNumber);
+                    command.Parameters.AddWithValue("@Cstreet", account.streetName);
+                    command.Parameters.AddWithValue("@CCity", account.city);
+                    command.Parameters.AddWithValue("@CPostalCode", account.postalCode);
+                    command.Parameters.AddWithValue("@CCountry", account.country);
+                    command.Parameters.AddWithValue("@PaymentMethod", account.paymentMethod);            
 
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -107,7 +107,7 @@ namespace WebShop.Data
             return result;
         }
 
-        public bool Delete(Customer customer)
+        public bool Delete(Account customer)
         {
             bool result = false;
 
@@ -127,7 +127,7 @@ namespace WebShop.Data
             return result;
         }
 
-        public bool Update(Customer customer)
+        public bool Update(Account account)
         {
             bool result = false;
 
@@ -136,14 +136,14 @@ namespace WebShop.Data
                 string query = "UPDATE Customer SET Username = @Username, Password = @Password, CstreetNumber = @CstreetNumber, Cstreet = @Cstreet, CCity = @CCity, CpostalCode = @CPostalCode, CCountry = @CCountry, PaymentMethod = @PaymentMethod WHERE CustomerID = @CustomerID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Username", customer.username);
-                    command.Parameters.AddWithValue("@Password", customer.password);
-                    command.Parameters.AddWithValue("@CstreetNumber", customer.streetNumber);
-                    command.Parameters.AddWithValue("@Cstreet", customer.streetName);
-                    command.Parameters.AddWithValue("@CCity", customer.city);
-                    command.Parameters.AddWithValue("@CpostalCode", customer.postalCode);
-                    command.Parameters.AddWithValue("@CCountry", customer.country);
-                    command.Parameters.AddWithValue("@PaymentMethod", customer.paymentMethod);
+                    command.Parameters.AddWithValue("@Username", account.username);
+                    command.Parameters.AddWithValue("@Password", account.password);
+                    command.Parameters.AddWithValue("@CstreetNumber", account.streetNumber);
+                    command.Parameters.AddWithValue("@Cstreet", account.streetName);
+                    command.Parameters.AddWithValue("@CCity", account.city);
+                    command.Parameters.AddWithValue("@CpostalCode", account.postalCode);
+                    command.Parameters.AddWithValue("@CCountry", account.country);
+                    command.Parameters.AddWithValue("@PaymentMethod", account.paymentMethod);
 
                     if (command.ExecuteNonQuery() == 1)
                     {

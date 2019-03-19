@@ -17,8 +17,9 @@ namespace WebShop
 {
     public partial class Login : Form
     {
-        CustomerRepository customerRepo = new CustomerRepository(new MSSQLcontextCustomer());
-        
+        AccountController account = new AccountController();
+
+
         public Login()
         {
             InitializeComponent();
@@ -33,19 +34,11 @@ namespace WebShop
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-           
-            Customer loggingUser = customerRepo.Login(tbLogin.Text);
-            if(loggingUser.password == tbPassword.Text)
-            {
-                CustomerDashBoard customerdashboard = new CustomerDashBoard();
-                customerdashboard.loggedUser = loggingUser.customerId;
-                this.Hide();
-                customerdashboard.Show();
-            }
-            else
-            {
-                MessageBox.Show("Username and password do not match. Please register if you don't have an account yet.");
-            }
+            
+            CustomerDashBoard dashboard = new CustomerDashBoard(account.Login(tbLogin.Text, tbPassword.Text));
+            dashboard.Show();
+            this.Hide();
+   
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,6 +46,11 @@ namespace WebShop
             Register register = new Register();
             register.Show();
             this.Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

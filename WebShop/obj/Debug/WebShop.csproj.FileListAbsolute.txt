@@ -10,3 +10,4 @@ C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\ob
 C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.pdb
 C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.UI.Register.resources
 C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.CustomerDashBoard.resources
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.UI.Shop.resources

@@ -15,7 +15,7 @@ namespace WebShop.UI
 {
     public partial class Register : Form
     {
-        CustomerRepository customerRepo = new CustomerRepository(new MSSQLcontextCustomer());
+       
         public Register()
         {
             InitializeComponent();
@@ -23,17 +23,7 @@ namespace WebShop.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Customer registeringUser = new Customer();
-            registeringUser.username = tbUsername.Text;
-            registeringUser.password = tbPassword.Text;
-            registeringUser.streetName = tbStreetName.Text;
-            registeringUser.streetNumber = Convert.ToInt32(tbStreetNumber.Text);
-            registeringUser.city = tbCity.Text;
-            registeringUser.postalCode = tbPostalCode.Text;
-            registeringUser.country = tbCountry.Text;
-            registeringUser.paymentMethod = "test";
-
-            customerRepo.Insert(registeringUser);
+            Account registeringUser = new Account(tbUsername.Text, tbPassword.Text, Convert.ToInt32(tbStreetNumber.Text), tbStreetName.Text, tbCity.Text, tbPostalCode.Text, tbCountry.Text, "huh");
         }
 
         private void buttonExitRegister_Click(object sender, EventArgs e)
@@ -41,6 +31,11 @@ namespace WebShop.UI
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

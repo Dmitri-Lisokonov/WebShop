@@ -15,34 +15,37 @@ namespace WebShop
 {
     public partial class CustomerDashBoard : Form
     {
-        CustomerRepository customerRepo1 = new CustomerRepository(new MSSQLcontextCustomer());
-        public int loggedUser;
+
+        Account account;
+
         public CustomerDashBoard()
         {
-            Customer customer = new Customer();
             InitializeComponent();
-           // customer = customerRepo1.Get(loggedUser);
-           
+     
         }
+        public CustomerDashBoard(Account account)
+        {
+            InitializeComponent();
+            this.account = account;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
-            customer = customerRepo1.Login(textBox1.Text);
-            labelUsername.Text = customer.username;
-            labelPassword.Text = customer.password;
-            labelStreetName.Text = customer.streetName;
-            labelStreetNumber.Text = customer.streetNumber.ToString();
-            labelPostalCode.Text = customer.postalCode;
-            labelCity.Text = customer.city;
-            labelCountry.Text = customer.country;
-            labelPaymentMethod.Text = customer.paymentMethod;
 
         }
 
         private void CustomerDashBoard_Load(object sender, EventArgs e)
         {
 
+            labelUsername.Text = account.username;
+            labelPassword.Text = account.password;
+            labelStreetName.Text = account.streetName;
+            labelStreetNumber.Text = account.streetNumber.ToString();
+            labelPostalCode.Text = account.postalCode;
+            labelCity.Text = account.city;
+            labelCountry.Text = account.country;
+            labelPaymentMethod.Text = account.paymentMethod;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

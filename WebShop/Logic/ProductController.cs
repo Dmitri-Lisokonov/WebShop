@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebShop.Logic
 {
-    class ProductRepository
+    class ProductController
     {
     }
 }
