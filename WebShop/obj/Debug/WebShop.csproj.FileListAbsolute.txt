@@ -1,0 +1,12 @@
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\bin\Debug\WebShop.exe.config
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\bin\Debug\WebShop.exe
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\bin\Debug\WebShop.pdb
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.csprojAssemblyReference.cache
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.Login.resources
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.Properties.Resources.resources
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.csproj.GenerateResource.cache
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.csproj.CoreCompileInputs.cache
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.exe
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.pdb
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.UI.Register.resources
+C:\Users\Root\OneDrive - Office 365 Fontys\HBO-ICT\OIS\Blok 3\WebShop\WebShop\obj\Debug\WebShop.CustomerDashBoard.resources
