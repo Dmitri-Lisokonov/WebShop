@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WebShop.Models
 {
      public class Account
-    {
+     {
         public int customerId { private set; get; }
         public string paymentMethod { private set;  get; }
         public string password { private set;  get; }
